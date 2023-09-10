@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import PopupSection from './components/PopupSection';
+import MainSection from './components/MainSection';
+import AboutSection from './components/AboutSection';
+import ProjectsSection from './components/ProjectsSection';
+import Footer from './components/Footer';
 
 function App() {
+  const [popupVisible, setPopupVisible] = useState(false); // Добавьте это
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Navbar setPopupVisible={setPopupVisible} /> {/* Передаем функцию для управления видимостью попапа */}
+      <PopupSection popupVisible={popupVisible} setPopupVisible={setPopupVisible} /> {/* Передаем состояние и функцию для управления видимостью попапа */}
+      <MainSection />
+      <AboutSection />
+      <ProjectsSection />
+      <Footer />
     </div>
   );
 }
