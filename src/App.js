@@ -5,6 +5,7 @@ import MainSection from './components/MainSection';
 import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   const [popupVisible, setPopupVisible] = useState(false); // Добавьте это
@@ -17,6 +18,7 @@ function App() {
       <AboutSection />
       <ProjectsSection />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
